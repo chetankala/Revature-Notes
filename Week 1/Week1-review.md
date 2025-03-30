@@ -205,10 +205,41 @@
 - Primitive Type
 	- 8 primitives
 		- byte
+			- 8 bit integer values
 		- short
+			- 16 bit integer values
 		- char
+			- 16 bit unicode characters
 		- int
+			- 32 bit integer values
 		- long
+			- 64 bit integer values
+			- "L"
 		- float
+			- 32 bit floating point values
+			- "f"
 		- double
-
+			- 64 bit floating point values
+- Control Flow
+	- If statement: used to execute a block of code if true
+		- else if: is another if statement chained to a previous that will run if the previous was false
+		- else: runs if if, and all else ifs are false
+	- While loop
+		- runs a block of code repeatedly while a specific condition is true
+	- Do-while loop
+		- runs a block of code first, and then evaluates a condition to see if it's true before looping again
+		- Do-while loops are guaranteed to run at least once
+	- For loop
+		- A loop with 3 parts
+		- Declaration block: create a "counter" variable
+		- Conditional block: runs loop if condition is true
+		- Increment block: used to change the counter variable's value (could also be used for decrementing)
+	- Switch statements
+		- Use a specific variable and match its value against various "cases"
+	- Break and continue
+		- Used to exit a loop without further evaluation
+		- **continue** used to stop execution of current block and proceed to the next block
+- Boolean expressions
+	- `==` Check equality of two values
+		- For primitive variables, checks whether values are equal
+		- For reference variables, checks whether the two variables are pointing to the same object
