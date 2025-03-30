@@ -1,0 +1,214 @@
+# Week 1 Notes
+
+# Fullstack Overview
+- Full stack refers to the entire depth of a system
+	- Frontend + backend
+- Frontend: The visible part of the application on mobile devices / browsers, etc.
+	- Usually built using HTML, CSS, JavaScript (JS)
+- Backend: Servers, databases, and internal architecture that drives the application
+	- Customer or end user does not have a direct interaction with this realm
+- Fullstack developers have knowledge in both diciplines
+	- Versatile enough to work on both frontend and backend
+	- Organizations value fullstack developers since it's often necessary to have team memebers who understand how the entire system works
+
+# Operating Systems
+- Common OSes
+	- Linux
+	- Windows
+	- Mac OS / Mac OS X
+- Kernel: program at the core of an OS
+	- Links the hardware and the software
+	- Has full control over hardware resources
+	- Performs arbitration between different processes that are runnning
+	- Provides abstraction between applications and the hardware
+- Process management
+	- Process: an application in execution
+		- Executed sequentially according to code instructions for that program
+		- A program becomes a process when it starts
+		- 5 different states: start, ready, running, waiting, terminated
+- Threads
+	- A thread is a flow of execution within a process
+	- A thread keeps track of all instructions that need to be executed next
+	- They contain all current variables being worked with and the execution history (stack memory)
+- Scheduling
+	- OS process manager is responsible for scheduling when each process gets execution time on the CPU
+	- OS thread scheduler is responsible for scheduling when each thread within a process gets executed (for multi-threaded application)
+- Memory Management
+	- OS manages RAM (Random Access Memeory)
+	- Processes are allocates space on RAM
+	- OS also handles file IO (writing and reading from a disk)
+- Unix Style commands
+	- Unix is an old operating system on which many modern system are built
+		- Linux is inspired by Unix (although they're not the same thing)
+	- Commands
+		- pwd
+			- current directory
+		- ls
+			- list files + directories
+		- cd
+			- change directory
+		- mkdir
+			- make a new directory
+		- touch
+			- make a new blank file
+		- cat
+			- output contents of file
+		- echo
+			- print to console arguments passed in
+		- grep
+			- search for string in file/string input
+		- diff
+			- compare differences between files
+		- rm
+			- remove files or directory
+		- cp
+			- change files or directory
+		- mv
+			- move file or directory
+
+# SDLC
+- SDLC: Software development lifecycle
+	- 6 core phases
+		- Requirements phase
+			- Defining what an applicaton is supposed to do
+			- Establishing what resources are required for the project
+		- Design phase
+			- Modeling how an application will be put together
+			- Architecture, UI, platform, programming paradigms, security, networking, databases
+		- Implementation phase
+			- Writing code
+			- Multiple teams maybe working on a large project
+			- Version control system often used such as **Git**
+		- Testing phase
+			- Making sure an application is working correctly according to the requirements
+			- Manual or Automated
+			- Testing helps reduce # of bugs/glitches in application
+		- Deployment phase
+			- Application is made available to users
+			- Manual or Automated
+			- DevOps is a modern process that is helpful for automation of deployment
+			- Deployment can be complex if there are many different systems and/or distributed architecture, etc.
+		- Maintenance phase
+			- Users may discover bugs that weren't found during testing phase that the development team must fix
+			- Additional features may be planned for future releases based on customer suggestion, etc.
+- Waterfall
+	- Classic method of development
+	- Progress goes sequentially from one phase to another
+		- Cannot go back to previous phase
+	- Phase are fully completed before moving to the next
+	- Advantages
+		- Simple model
+		- Easy to implement
+		- Phases are clearly defined
+		- Works well in short projects
+	- Disadvantages
+		- Not ideal for complex projects
+		- Time may be wasted since each phase needs to be completed before moving to the next
+		- Software product is not available for testing until later phases, which means bugs may not be caught until late in the development process
+- Agile
+	- Revolves around putting customer needs first
+	- Focuses strongly on user experiences and customer input
+		- Development is highly responsive to customer feedback
+		- Software is released in iterations to respond to a changing market
+		- Requires a strong team with excellent communication
+	- 4 core values of Agile
+		- Interactions and individuals over tools and processes
+		- Working software over comprehensive documentation
+		- Customer collaboration over contract negotiation
+		- Responding to change over following a plan
+	- Advantages
+		- Provides a responsive approach to development of software
+		- Enhances flexibility / agility
+	- Disadvantages
+		- If not implemented properly, inadequate documentation can hinder knowledge transfer to new members on the development team
+		- Having a less rigid model compared to waterfall can lead to disorganization if team members are not good at self-organization
+	- Agile user stories
+		- Format
+			- `As a <role>`
+			- `I want <goal>`
+			- `So that <benefit>`
+		- Acceptance Criteris
+			- Conditions that must be met for a user story to be considered complete in terms of functionality
+		- Example user story:
+			- As an account manager
+			- I want a sales report of my account sent to my inbox daily
+			- So that I can monitor the sales progress of my customer portfolio
+			- Acceptance criteria:
+				- The report is sent to my inbox daily
+				- The report contains the following sales details: ...
+				- The report is in csv format
+		- Requirements are written from the perspective of the user to keep the development team in line with customer needs and wants
+	- Agile standup meetings
+		- Usually a 15 minuite meeting
+		- It happens daily in the morning
+		- Each team member talks about 
+			- What they worked on the previous day
+			- What they will work on today
+			- What issues/blockers/problems they are running into
+
+# Git
+- Version control system
+	- Version control: the practice of tracking and managing code changes in a project
+		- Save changes to project (creating new versions)
+		- Revert to old versions
+	- Version control system are tools that facilitate the process of version control
+	- Git is the most popular VCS
+- Repository types
+	- Local repository
+		- Local copy on your computer
+	- Remote repository
+		- Copy that exits on a repository hosting website (Github, Gitlab, BitBucket, etc.)
+- File States
+	- Modified
+		- A file has been changed, added, or deleted but the modification has not been staged
+	- Staged
+		- A modified file is ready to be committed
+	- Committed
+		- Staged files have been saved to the local repository
+- Git commands
+	- `git init` creates a new local repository
+	- `git remote add` links the local repository with a remote repository
+	- `git clone` creates a local repository that is a copy of an already exisiting remote repository (ex. a repository that already exists on GitHub)
+	- `git status` to view status of the repository and to see modified files and/or files ready to be committed
+	- `git commit` to commit changes to local repository
+	- `git log` to view newly created commit
+	- `git push` to push commit to remote repository
+
+# Java Fundementals
+- High level programming language
+- Features include:
+	- Highl object oriented
+	- Strongly typed: values are not implicitly converted between types
+	- Strictly typed: variables are declared with a type that cannot be changed
+- Benefits:
+	- Write once run anywhere
+	- Widley used with extensive 3rd party libraries + frameworks that are open source
+	- Automatic memory management
+- Disadvantages
+	- Can be inefficient with memory management at times
+	- All users must have a JRE installed on a computer to run Java programs
+	- Forces OOP to be used
+	- Takes time to compile code before it can be run 
+	- Licensing
+- JDK vs JRE vs JVM
+	- JDK: Java Development Kit:
+		- Contains a **compiler** that turns source code into byte code
+		- DevTools, debugger, documentation tools, etc.
+		- JRE
+	- JRE: Java Runtime Environment
+		- Built-in libraries
+			- ex. String class, System class, Math class, collections API, etc.
+		- JVM
+	- JVM: Java Virtual Machine
+		- Runs byte code and issues instructions to the machine on how to run the program
+			- Contains a JIT (Just in Time) compiler that reads byte code line by line and issues low-level commands to the computer while program is running 
+- Primitive Type
+	- 8 primitives
+		- byte
+		- short
+		- char
+		- int
+		- long
+		- float
+		- double
+
