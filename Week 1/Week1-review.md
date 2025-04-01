@@ -243,3 +243,49 @@
 	- `==` Check equality of two values
 		- For primitive variables, checks whether values are equal
 		- For reference variables, checks whether the two variables are pointing to the same object
+		- `>` Greater than
+		- `<` Less than
+		- `>=` Greater than or equal to
+		- `<=` Less than or equal to
+		- `!` Reverse value of boolean
+		- `&&` AND
+			- true && false -> true
+			- everything else is false
+		- `||` OR
+			- false || false -> false
+			- everthing else is true
+- Strings
+	- Objects in Java, not primitives
+	- Sequences of charanters
+	- Immutable (when a String object is created in memory, its characters cannot be changed)
+	- Double quotes represent string literals
+	- Common string method
+		- `.equals(Object o)`
+		- `.charAt(int index)`
+		- `.concat(String s)`
+		- `.contains(CharSequence cs)`
+		- `.toCharArray()`
+		- `.substring(x, y)`
+		- `.length()`
+		- `.split(regex)`
+		- `.toLowerCase()`
+		- `.toUpperCase()`
+		- `.trim()`
+- Array
+	- A contiguous block of memory that stores a group of sequentially stored elements of the same type
+	- Fixed in size: once an array is created, its size cannot be changed
+	- Arrays can be used for both primitive and object types
+	- Ways to create an array
+		- `int[] myInts = new int[5];`
+			- Creates and array of size 5
+			- `[0, 0, 0, 0, 0]`
+		- `int[] myInts = new int[] {10, 20, 30, 40, 50};`
+			- Creates an array of size 5
+			- Pre-populates with values
+			- `[10, 20, 30, 40, 50]`
+		- `int[] myInts = {10, 20, 30, 40, 50}`
+			- Same as above, but without using `new int[]`
+- Classes and Objects
+	- Classes are blueprints for creating objects in memory
+		- Classes are named with CamelCase convention
+		- Fields and methods are named with lowercase camelCase
