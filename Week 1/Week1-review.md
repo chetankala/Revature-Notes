@@ -330,4 +330,80 @@
 	- Naming convention of package is "reverse domain naming"
 		- `com.revaturepro`
 		- lowercase
-	- Subpackages 
+	- Subpackages are packages inside of another package
+		- `com.revaturepro.model`
+		- However, subpackages can be seen/treated as totally different packages
+	- Whenever a class in a different package needs to utilize a class in another package, `importing` is needed
+		- `import` keyword is used to make another class from a different package accessible inside of the class that needs it
+- Variable Scopes
+	- Where a variable exists in memory
+	- 4 variable scopes in Java
+		- Static scope
+			- Also known as global scope
+			- A field with the static non-access modifier applies to it is a static scope variables
+			- A static field belongs to the class itself, not objects of the class
+		- Instance scope
+			- A variable that is scoped to a method
+				- Each object has its own independent values for that website
+			- A non-static field is an instance variable
+		- Method scope
+			- A variable that is scoped to a method
+			- Variables declared in a method are method scoped variables
+			- They are destroyed when the method is done executing
+		- Block scope
+			- A variable that is scoped to a block of code in a method
+			- When the block of code is done executing, the variable is destroyed
+- Throwables (Exceptions and Errors)
+	- Objects that can be thrown and caught
+		- Both Exceptions and Errors can be thrown and caught, but it's not recommended to catch Errors
+		- Exceptions: something that is reasonably expected to occur and can be recovered from through exception handling (catching the exception)
+		- Errors: something that is fatal to the application working properly and cannot be recovered from
+			- ex. OutOfMemoryError, StackOverflowError
+	- Throwable hierarchy
+		- Throwable class
+			- Error class
+			- Exception class
+				- Classes that extend Exception directly (checked exceptions)
+				- RuntimeException
+					- Classes that extend RuntimeException (unchecked exceptions)
+	- Checked v. Unchecked exceptions
+		- Checked exceptions require mandatory handling/declaring
+			- Checked excpetions are exceptions that directly extend the Exception class and NOT RuntimeException
+			- Declaring an exception: `throws` keyword in the method signature is used to indicate that the method will pass responsibility of handling the checked exception to another method that invokes this method
+			- Handling an exception: try-catch
+		- Unchecked exceptions are not required to be handled or declared
+			- However, it is still recommended to handle unchecked exceptions
+			- If you do not, then it will result in the program crashing
+		- Handling exceptions
+			- try block: risky code is placed in a try block
+			- catch block: if an exception occurs in the try block, the corresponding catch block will be executed
+				- There can be multiple catch blocks per try block to specify all of the different exceptions that may occur
+			- finally block: always runs at the end regardless of whether the try block finishes successfully without an exception OR if an exception occurs and the catch block must run
+	- Creating custom exceptions
+		- To create a checked exception
+			- Create a class that extends Exception
+		- To create an unchecked exception
+			- Create a class that extends RuntimeExceptions
+- Reading the stack trace
+	- The stack trace is an error message that appears whenever an exception that is not being handled crashes the program (or exceptionObject.printStackTrace() is used)
+	- The structure of the stack trace looks like the call stack at the moment the exception occcured
+		- The method at the top of the call stack is the method that threw the exception
+		- The exception will propagate down the call stack until it reaches a method that has a try-catch block for that exception
+- Access modifiers
+	- From most restrictive to least:
+		- private: can only be accessible within the same class
+		- default: can only be accessible within the same package
+		- protected: within the same packages + subclasses in any package
+		- public: anywhere
+- Non-access modifiers
+	- static 
+	- abstract
+	- final
+		- final method: cannot be overidden
+		- final class: cannot be extended
+		- final variable: value cannot be changed
+- Generics
+	- Specify types as parameters
+	- Allows us to avoid type-saftey issues (ClassCastException)
+	- Enforces type checking for methods
+	- Commonly used with collections to specify type stored in a collection
