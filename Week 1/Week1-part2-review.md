@@ -178,3 +178,34 @@
             - .contains(E element)
     - Set
         - Collection of unique values
+            - No elements have the same value
+        - No indexing (elements cannot be retrieve via an index)
+        - Primary operations
+            - .add(E element)
+            - .contains(E element)
+            - .remove(E element)
+            - .size()
+            - .clear()
+        - Hashset
+            - No inherent ordering
+        - TreeSet
+            - Has an inherent ordering based on smallest to largest when iterating over the TreeSet
+    - Map
+        - Collection of key-value pairs
+        - Key should be an immutable datatype such as a String
+        - Value can be anything
+        - Primary operations
+            - .get(K key)
+            - .put(K key, E value)
+            - .containsKey(K key)
+            - .size()
+            - .clear()
+    - Queue
+        - Collections of elements in FIFO order
+        - Elements are added to the end of the queue, elements are removed from the front
+        - Primary operations
+            - .offer(E element)
+            - .poll()
+            - .peek()
+            - .size()
+            - .clear()
