@@ -39,4 +39,107 @@
     - Means "many forms"
     - Methods can take on different forms via method overloading + overriding
     - Method overriding
-        - Where a method in the parent class is redefined in as 
+        - Where a method in the parent class is redefined in a child class
+        - Used to provide a specific implementation of a method already provided in the parent class
+        - Overriding is known as runtime polymorphism
+            - While the program is running, the JVM figures out which method to use
+        - Overriding rules
+            - Child class method has the same name as the parent class method
+            - Same parameters
+            - Same return type (or covariant type)
+            - Same access modifiers (or more accessible)
+    - Method overloading
+        - Where two or more methods in the same class have the same name
+            - Overloading helps to simplify the number of method names
+            - Examples in Java:
+                - `System.out.println(...)`
+                - `println(int x)` 
+                - `println(double x)` 
+                - `println(String str)`  
+                - `println(char c)`
+        - Overloading is known as compile-time polymorphism
+        - Rules
+            - Methods are in the same class
+            - Same name
+            - Different number of parameters and/or type of parameters
+- Abstraction
+    - "Hiding implementation details"
+    - "Taking something concrete and turning it into an idea"
+        - Ex. CombustionCar and ElectricCar are both Car
+        - Ex. Circle and Square are both Shapes
+        - Ex: Dog and Cat are both Animals
+    - Abstraction is accomplished through abstract classes and interfaces
+    - Abstract class
+        - Can contain abstract methods
+        - Also can have non-abstract methods
+        - Cannot be instantiated
+    - Interfaces
+        - Can only have abstract methods (until Java 8 introduced the defualt keyword)
+            - default keyword allows for the defining of non-abstract methods in interfaces
+        - Cannot instantiate an interface
+        - fields in an interface are public static final implicitly
+        - methods in an interface are public abstract implicitly
+    - A class can extend only one class (whether abstract or concrete)
+    - A class can implement as many interfaces as desired
+- Encapsulation 
+    - Enclosing data and methods into a single unit (class)
+        - Fields and methods interact with each other within an object created from a class
+        - Methods can access and/or modify the value of the fields
+    - Data-hiding is a best practice for encapsulation 
+        - Used to prevent other developers from modifying values in ways that are not intended by the original creator of a class
+            - ex. age should only be incremented, not decreased for a Person object
+        - Use access modifiers (private, default, protected, public) to restrict access
+        - Typically, fields should be restricted as much as reasonably possible
+    - Getter/setter methods
+        - Getter methods: used to access a property via a method
+        - Setter methods: used to set a property via a method
+
+# Maven
+- Dependency manager and build tool
+    - `pom.xml` file
+        - Contains the settings for the Maven project
+        - Dependencies utilized as listed in the pom.xml and automatically downloaded
+        - Plugins can also be configured when using Maven to build the project
+    - Dependency manager: when writing Java applications, many external libraries may be used
+        - Maven helps to automatically download + manage those dependencies
+    - Build tool: when writing Java applications, before deploying the application, the project must be built
+        - build: the process of creating a build artifact
+        - build artifact: a deployable file representing the application such as a .jar file
+    - Directory structure:
+        - `src/main/java`: where the project source code should go
+        - `src/main/resources`: where any custom configuration files and other resources go
+        - `src/test/java`: where the automated test code should go
+        - `src/test/resources`: where any resources that support the test code go
+
+# JUnit
+- A unit testing framework for Java
+    - Can be included into our project via Maven (putting the dependencies into the pom.xml file)
+    - A way to help us structure test cases
+        - `@Test` annotation
+            - Method is treated as a test case
+        - Annotation
+            - @Test
+            - @BeforeAll
+            - @AfterAll
+            - @BeforeEach
+            - @AfterEach
+        - Assertions
+            - Give JUnit the ability to fail a test if expected does not match equal
+            - Assertions.assertEquals(expected, actual)
+            - Assertions.assertTrue(boolean)
+            - Assertions.assertFalse(boolean)
+            - Assertions.assertArrayEquals([] expected, [] actual)
+            - Assertions.assertNull(...)
+            - Assertions.fail()
+
+# Collections API
+- Collection hierarchy
+    - Iterable interface
+        - Collection interface
+            - List interface
+                - ArrayList class
+                - LinkedList class
+                - Vector class
+            - Queue interface
+                - LinkedList class
+                - PriorityQueue class
