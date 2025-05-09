@@ -143,3 +143,38 @@
             - Queue interface
                 - LinkedList class
                 - PriorityQueue class
+            - Set interface
+                - HashSet class
+                - TreeSet class
+    - Map interface (not part of the Collection interface hierarchy)
+        * HashTable class
+        * HashMap class
+        * TreeMap class
+- Collections class
+    - A utility class that contains static methods that are useful for operating on collections
+    - Collections.sort(myList)
+    - Collections.sort(myList, Collections.reverseOrder())
+- Java's implementation of common data structure
+    - List
+        - Data stored in sequential order and accessible by an index
+        - Size can be expanded unlike an Array
+        - Two common types
+            - ArrayList
+                - Uses an array behind the scenes
+                - When the array runs out of space, a new array is created that is 1.5x the size of the old array
+                - Elements from the old array are copied over
+            - LinkedList
+                - Uses node objects linked to each other
+                - Each node stores a single value and links to the previous and next node
+        - Primary operations
+            - .add(E element)
+            - .add(int index, E element)
+            - .set(int index, E element)
+            - .get(int index)
+            - .remove(int index)
+            - .remove(E element)
+            - .size()
+            - .clear()
+            - .contains(E element)
+    - Set
+        - Collection of unique values
