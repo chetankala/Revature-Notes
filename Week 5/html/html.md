@@ -18,3 +18,13 @@
 - There are two categories/types of elements:
     - Block Elements: These elements will render as a block on the page, meaning any following element will render on a new line by default. Basically, block elements take up an entire line for themselves. In other words, it blocks a line for itself.
     - Inline Elements: These elements can sit next to each other on the same line when rendered. Can be rendered in the same line as each other.
+- Common HTML elements:
+    * `<div>` defines a "division" of the page. Often contains other elements. (block)
+    * <h1> through <h6> are header tags. 1 is the largest and 6 is the smallest. (block)
+    * <p> defines a paragrapgh (block)
+    * <span> standard inline element.
+    * `<br>` line break (does not need a closing tag) (inline)
+    * <img> displays an image (does not need closing tag) (inline)
+    * <a> anchor tag used to make a hyperlink. (inline)
+
+# Syntax 2: HTML Attributes
