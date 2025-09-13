@@ -44,3 +44,28 @@
 - **In AWS, Security Groups Allow All Traffic by Default.**
     - **False**: Security Groups deny all inbound traffic by default and allow all outbound trffic.
 
+- **AWS Regions and Availability Zones**:
+    - **Regions**: Geographical locations with multiple Availability Zones.
+    - **Availability Zones**: Discrete data centers with redundant power, networking, and connectivity.
+
+---
+
+### 1.2 **Amazon RDS (Relational Database Service)**
+
+- **What is Amazon RDS?**:
+    - A managed relational database service that support multiple database engines, including MySQL, PostgreSQL, Oracle, and SQL Server.
+
+- **Why choose RDS over Hosting on EC2?**
+    - RDS handles database management tasks such as backups, patching, and replication, allowing you to focus on your application rather than database maintenance.
+
+- **RDS Backup and Restore Options**:
+    - Automatic daily snapshots.
+    - Point-in-time recovery using transaction logs.
+
+---
+
+### 1.3 **Amazon S3 (Simple Storage Service)**
+
+- **Amazon S3 is which type of Storage Service?**
+    - Object Storage Service
+    
