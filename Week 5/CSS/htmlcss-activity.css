@@ -1,0 +1,24 @@
+/* This is an EXTERNAL STYLE SHEET - the "best practice" for styling an HTML page*/
+
+/* element selector - these styles will apply yo every paragraph element */
+p {
+    color: crimson;
+    margin: 3%;
+    border: 2px dashed purple;
+    padding: 3%;
+}
+
+/* class selector (.) - every element with the given class will get styled */
+.listHeader {
+    color: rgb(68, 0, 255);
+    font-family: cursive;
+    transform:rotate(160deg);
+}
+
+/* id selector (#) - the element with the given id will get styled */
+#listDiv{
+    background-color: chartreuse;
+    margin-left: 5%;
+    border: 10px groove black;
+    padding-bottom: 15%;
+}

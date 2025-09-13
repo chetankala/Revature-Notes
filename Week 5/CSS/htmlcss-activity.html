@@ -1,0 +1,149 @@
+<!DOCTYPE html> <!--doctype decleration (not considered an element) - decalares what kind of doc this is-->
+<html lang="en"> <!--the html tag is considered the "root element"-->
+
+<head> <!--the head is typically metadata, but the <title> element names our tab-->
+    <meta charset="UTF-8"> <!--metadata element-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--metadata element-->
+    <title>HelloHTML</title> 
+
+    <!--If could declare CSS styles in the head like this:-->
+    <style>
+        /* STYLING GOES HERE */
+    </style>
+
+    <!--The preferred way to include CSS in your HTML is by linking external stylesheet-->
+    <link rel="stylesheet" href="htmlcss-activity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" intgregrity="sha512-iecdLmaskl7CVkqkXNQ/ZmCULaM6tuvsC4r2D7qUqzvtcH3jW5a5vw5fXh6nB9Ew5y1Q==" crossorigin="anonymous">
+
+</head>
+
+<body> <!--The body is what contains our actual webpage content. You'll write most (all, really) of your HTML here-->
+    <h1 style="background-color:royalblue; color:beige; border: 3px solid black">Hello HMTL. I am a front end developer now!</h1> <!--h1 is the largest header element (h6 is the smallest)-->
+    <button type="button" class="btn btn-success">Click Me!</button>
+    <p>I just built a webpage!</p> <p>Despite being written on the same line, we render on different lines</p>
+    <!--<p> elements are BLOCK elements. They never share a line. They BLOCK a line for themselves-->
+
+    <!--WHAT IF I want elements that can display on the same line? We need an INLINE element!-->
+    <span>I am a span.</span> <span>I am another span</span> <span>We are INLINE elements</span>
+
+    <br> <!--Line breaks create a line of empty space. Good for formatting in a pinch-->
+    <br><br><br>
+
+    <!--divs are general divisions. We usually group elements together within divs (or other mechanisms)-->
+    <div style="font-family: Ariel, Helvetica, sans-serif">
+        <p style="font-weight:bolder; font-style: italic;">I am a paragraph element in a div</p>
+        <span>I am a span in a div</span>
+        <h4> I am an h4 in a div</h4>
+    </div>"
+
+<!--(LISTS)-------------------------------------------------------------------------------------------------------->
+<br />
+
+<img width="300px" src="https://shorturl.atkQYZ7">
+<div>
+    Credit: lalalalalala / Adobe Stock
+    <br />
+    <a href="https://shorturl.at/kDJKO">Link to more cute puppers!</a>
+</div>
+
+    <div id ="listDiv">
+        <h2 class="listHeader">My Favorite Animals</h2>
+
+        <!--Ordered List. List items re given numerical order by defult-->
+        <ol>
+            <li>Dog</li>
+            <li>Cat</li>
+            <li>Elephant</li>
+            <li>Giraffe</li>
+            <li>Penguin</li>
+            <li>Cheetah</li>
+        </ol>
+
+        <h3 class="listHeader">Honorable Mentions</h3>
+
+        <!--Unordered List. List items are bulleted by default-->
+        <ul>
+            <li>Dolphin</li>
+            <li>Otter</li>
+            <li>Red Panda</li>
+        </ul>
+    </div>
+
+<!--(TABLES)-------------------------------------------------------------------------------------------------------->
+    
+    <table> <!--Tables start with the table element-->
+
+        <thead> <!--Thead is the table header section-->
+            <tr> <!--Table rows are defined with the tr element-->
+                <th>Name</th> <!--th is the cell with the table header-->
+                <th>Favorite Food</th>
+            </tr>
+        </thead>
+
+        <tbody> <!--Tbody is the table body section (the data)-->
+            <tr>
+                <td>Ben</td> <!--td is a standard table cell-->
+                <td>Steak</td>
+            </tr>
+            <tr>
+                <td>Patrick</td>
+                <td>Salmon</td>
+            </tr>
+            <tr>
+                <td>Adnaan</td>
+                <td>Chicken</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+<!--(FORMS)-------------------------------------------------------------------------------------------------------->
+
+<!--Forms can lead to some annoying HTTP Requests obstacles-->
+<!--Good workaround would be to use input boxes on their own instead of wrapping them in a form-->
+
+    <form>
+        <p>Enter Username here:</p>
+        <input type="text" placeholder="John Doe" required> <!--Input elements are self closing-->
+
+        <p>Enter Password here:</p>
+        <input type="password" placeholder="Password123!">
+
+        <p>Enter your age</p>
+        <input type="number" min="18" max="120">
+
+        <!--Radio buttons only let you choose ONE option-->
+        <h2>YOU MUST CHOOSE:</h2>
+
+        <input type="radio" name="radio" id="radio1"> <!--name is the option set this belongs to, id is the unique identifier-->
+        <label for="radio1">OPTION A</label> <!--Labels lets us assign values to each option-->
+
+        <input type="radio" name="radio" id="radio2">
+        <label for="radio2">OPTION B</label>
+
+        <!--Checkboxes let you choose MULTIPLE options-->
+        <h4>How do you feel about your choice?</h4>
+
+        <input type="checkbox" name="checkbox" id="check1">
+        <label for="check1">Somber</label>
+
+        <input type="checkbox" name="checkbox" id="check2">
+        <label for="check2">Ecstatic</label>
+
+        <input type="checkbox" name="checkbox" id="check3">
+        <label for="check3">Indifferent</label>
+
+        <input type="checkbox" name="checkbox" id="check4">
+        <label for="check4">Irritated</label>
+    </form>
+
+    <button>Click me!! Nothing will happen :)</button>
+
+    <!--Summary tags are one of the semantic elements introduced in HTML 5. They give a summary and let you dropdown for more details-->
+    <details>
+        <summary>expand me for more info</summary>\
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae totam, aperianos que odio hic reiciendis quasi qui dolor nostrum assumenda</p>
+    </details>
+
+</body>
+</html>
