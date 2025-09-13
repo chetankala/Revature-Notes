@@ -68,4 +68,28 @@
 
 - **Amazon S3 is which type of Storage Service?**
     - Object Storage Service
-    
+
+- **Possible Uses of an S3 bucket?** (Select all of apply)
+    - Storing application backups
+    - Hosting static websites
+    - Storing and retrieving data from web applications
+    - Storing media files like images and videos
+
+- **Rules for setting up an S3 bucket**:
+    - Bucket names must be gloablly unique
+    - Names must be DNS-complient (lowercase letters, number, and hyphens)
+
+- **Controlling Access to S3 Objects**:
+    - Use **Bucket Policies**, **IAM Policies**, or **Access Control List (ACLs)**.
+
+- **S3 Buckets for Hosting Websites**:
+    - S3 buckets host static websites without needing a web server. Enable **static website hosting** and set the bucket policy to allow public access.
+
+- **You want to HOST a front-end website in AWS. What is the appropriate service?**
+    - **Amazon S3**
+
+- **How to make an S3 bucket public for webpage access?**
+    - Configure the bucket policy to allow public read access.
+    - Enable static website hosting in the bucket setting. 
+
+---
