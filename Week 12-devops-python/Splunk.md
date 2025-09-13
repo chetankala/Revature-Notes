@@ -69,4 +69,47 @@ index=<your_index> sourcetype=<your_source_type>
 - Specify our index, where our data is stored on Splunk, in our case, we will us "main" because this is the default index
 - Also specify our resource type, log4j
 #### Line 2 - Regular Expressions - extracting fields from the log statements to be used in Splunk Processing
-- rex field - indicates 
+- rex field - indicates that we want to include a regular expression which helps us match patterns and extract out the data from the log
+- In this case, we need 2 fields: person_id, pet_count
+- ```(?<person_id>\d+)\)``` - this is a capture group, denoted by the ()
+    - the ?<person_id> - gives a label to the captured value
+    - the d+
+        - \d stands for digits (0-9)
+        - + stands for one or more
+        - So, \d+ just means we're capturing 1 or more digits
+            - Because we are capturing ids which are numerical and can have 1 or more digits
+    - To test out the regular expression, go [here](https://regexr.com/)
+#### Line 3 - Proccessing - grouping by person_id and returning the total count of pets they have adopted
+- Now that we've extracted person_id and pet_count from the logs, now it's time to process those
+- stats - Provides statistics, grouped optionally by fields
+    - We want to group our data by the person_id field
+- latest - returns the chronologically latest value of whatever argument (in this case, pet_count)
+    - We want the latest because the pet count is going to change with every adoption
+- as - like an alias in SQL, renaming the "latest" pet_count to be just pet_count to be used in the output table
+- by - indicating the field by which we want to group our data
+#### Line 4 - Dictating which fields should appear in the output table
+- table - specify what we want in our output
+    - Specify the names of the fields
+
+### Exporting
+- Once we have the table, can again click the download icon and select CSV as your format, download
+
+```
+index=main sourcetype=log4j
+| rex field=_raw "Person \(id: (?<person_id>\d+)\) now has (?<pet_count>\d+) pets"
+| stats latest(pet_count) as pet_count by person_id
+| table person_id, pet_count
+```
+
+## Project
+- If you want generate a CSV for amortization
+- Think about what fields you want to extract
+    - User id
+    - Payment Amount
+    - Remaining Balance
+    - Interest Rate
+    - Date of Payment
+    - etc.
+- Then, create a regular expression that targets all of the fields
+- Finally, use SPL to run calculations, format output table as needed
+    - Then, export to CSV
