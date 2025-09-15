@@ -30,7 +30,7 @@
         - `ec2-x-x-x-x.compute-1.amazonaws.com`: Public DNS of the EC2 instance.
 
 - **It is impossible to reassign a new key to an EC2 instance after it is created.**
-    - **False**: You can reassign a new key pair by creating a new image (AMI) of the instance or by mounting the EBS volume on another instance to change they key configuration.
+    - **False**: You can reassign a new key pair by creating a new image (AMI) of the instance or by mounting the EBS volume on another instance to change the key configuration.
 
 - **How do you secure EC2?** (Select all valid options)
     - Use **Security Groups** and **Network ACLs** to control traffic.
@@ -91,5 +91,57 @@
 - **How to make an S3 bucket public for webpage access?**
     - Configure the bucket policy to allow public read access.
     - Enable static website hosting in the bucket setting. 
+
+---
+
+#### 1.4 **AWS Elastic Block Store (EBS)**
+
+- **What is EBS?**
+    - A block storage service used for storing data persistently with EC2 instances. It provides highly available and durable volumes that can be attached to EC2 instances.
+
+- **Types of the EBS Volumes**:
+    - General Purpose SSD (gp2, gp3)
+
+- **Snapshots and Backups**:
+    - You can create snapshots of EBS volumes for backup or disaster recovery purposes
+
+---
+
+### **Section 2: CodeBuild, CodeCommit, CodeDeploy**
+
+- **What is AWS CodeBuild?**
+    - A fully managed build service that compiles source code, runs tests, and produces software packages. 
+
+- **CodeBuild's Key Features**:
+    - Supports build environments like Amazon Linux, Ubuntu, and Windows
+    - Can execute any build commands defined in a `buildspec.yml` file
+
+- **What file does CodeBuild read by Default?**
+    - The `appspec.yml` file
+
+- **Difference between CodeBuild and CodeDeploy**:
+    - **CodeBuild**: Runs build commands in a temporary environment
+    - **CodeDeploy**: Deploys applications to EC2 instances, on-premise servers, or Lambda functions
+
+---
+
+### **Section 3: Splunk**
+
+- **Role of a Splunk Indexer**:
+    - An indexer indexes incoming data and enables fast search and retrieval of specific data.
+
+- **Primary Function of the Splunk Forwarder**
+    - Collects and sends log data from a source (e.g., server, application) to the Splunk indexer for indexing and analysis.
+
+- **Optimizing Searches for faster performance**:
+    - Use selective fields (`fields` command) to reduce data retrieval
+    - Limits the time range of the search
+    - Use `tstats` for optimized searches on large datasets
+
+- **Command Used to Transform Events into Statistical Data Tables**:
+    - `stats`
+
+- **Extracting Fields from Unstructured Data**:
+    - Use the `rex` command to extract fields using regular expressions
 
 ---
