@@ -66,7 +66,7 @@ index=<your_index> sourcetype=<your_source_type>
 
 ### Explanation of Query
 #### Line 1 - Preliminary fields, indicating the type of logs, the source of the data
-- Specify our index, where our data is stored on Splunk, in our case, we will us "main" because this is the default index
+- Specify our index, where our data is stored on Splunk, in our case, we will use "main" because this is the default index
 - Also specify our resource type, log4j
 #### Line 2 - Regular Expressions - extracting fields from the log statements to be used in Splunk Processing
 - rex field - indicates that we want to include a regular expression which helps us match patterns and extract out the data from the log
