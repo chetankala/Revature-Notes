@@ -12,3 +12,19 @@ app = Flask(__name__)
 # Set up routes:
 def hello_world():
     return 'Hello, World!'
+
+# Returning JSON response:
+@app.route('/constants', methods=['GET'])
+def get_constants():
+    constants = {
+        "pi": 3.14159,
+        "e": 2.71828,
+        "golden_ratio": 1.61803
+    }
+    # jsonify the request so it can be sent over HTTP
+    return jsonify(constants)
+
+# Setting up our "main" function:
+if __name__ == '__main__':
+    # Run the app
+    app.run()
