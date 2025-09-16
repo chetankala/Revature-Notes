@@ -145,3 +145,36 @@
     - Use the `rex` command to extract fields using regular expressions
 
 ---
+
+### **Section 4: DevOps Concepts**:
+
+- **DevOps and Agile**:
+    - DevOps integrates with Agile by promoting collaboration, continuous feedback, and automation, enabling faster and more reliable software delivery.
+
+- **Primary goal of DevOps**:
+    - Shorten the development lifecycle and deliver high-quality software rapidly and reliably.
+
+- **Continuous Integration (CI)**:
+    - The practice of merging code changes into a shared repository frequently, with automated builds and tests triggered for each change.
+
+- **Continuous Delivery (CD)**:
+    - Automatically prepares code changes for release to production, ensuring that every build is production-ready.
+
+- **Continuous Deployment (CD)**:
+    - Automatically deploys code changes to production without manual intervention.
+
+---
+
+### **Section 5: Docker Fundamentals**:
+
+- **What is Docker?**
+    - Docker is a platform that enables developers to package applications and their dependencis into containers, providing a consistent environment across different stages of development and deployment.
+
+- **Why use Docker instead of Virtual Machines (VMs)?**:
+    - Docker containers are lightweight and start quickly compared to VMs. Containers share the host OS kernel, which reduces overhead.
+
+- **Key Docker Commands**:
+    - `docker build -t image-name .` - Builds a docker image
+    - `docker run -p 8080:8080 image-name` - Run a container from an image
+    - `docker ps` - List running containers
+    - `docker push image-name` - Push a Docker image to a registry
