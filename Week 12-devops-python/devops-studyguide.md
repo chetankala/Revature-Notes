@@ -234,4 +234,46 @@ stages:
 
 # Cache Settings
 cache:
-    key: ""
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+        - .gradle/wrapper
+        - .gradle/caches
+
+before_script:
+    - export GRADLE_USER_HOME=$(pwd)/.gradle
+
+# build the app using gradle, and specify the path for the artifact
+build:
+    stage: build
+    script: 
+        - gradle build --no-daemon
+        # The artifact in this case will be the .jar file that is built from the application
+        artifacts:
+            paths:
+                - build/libs/*.jar
+            expire_in: 1 week
+
+# Run tests via gradle:
+test:
+    stage: test
+    script:
+        - gradle test --no-daemon
+    artifacts:
+        when: always
+        paths:
+            - build/test-results/
+            - build/reports/
+        reports:
+            junit: build/test-results/test/*.xml
+
+deploy:
+    stage: deploy
+    script:
+        - echo "Deploying the application..."
+        # Add your deployment logic here (e.g., copy the jar to a server or run it)
+
+    artifacts:
+        paths:
+            - build/libs/*.jar
+        expire_in: 1 week
+```
