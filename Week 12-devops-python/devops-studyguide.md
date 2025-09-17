@@ -178,3 +178,60 @@
     - `docker run -p 8080:8080 image-name` - Run a container from an image
     - `docker ps` - List running containers
     - `docker push image-name` - Push a Docker image to a registry
+
+
+# Gitlab Demo
+- Navigate to Gitlab.com
+- Sign In
+- Go to Personal Projects
+- Create a New Project
+    - Can either create blank project or create from template
+- Fill out fields
+    - Name
+    - Project URL, can keep defaults
+    - Visibility
+    - Initialize README if we want
+    - Can leave the rest as default settings
+- Create Spring Boot App
+    - Go to start.spring.io
+    - Make sure to select "Jar" as the packaging type
+    - Optionally add dependencies like Spring Web
+    - Can leave the other settings unchanged
+    - Download and extract the generated app
+- Setting up the pipeline:
+    - At the root level of our source code, add a file called
+    -       .gitlab-ci.yml
+    - The .gitlab-ci.yml pipeline is a set of instructions for the build/test/deploy stages of our pipeline
+        - For example, we can configure our pipeline to use Gradle to build and test our application beforr serving the generated artifact (jar file) to some deployment environment or just as a download 
+        - When we configure the artifact in the yml file, we are specifying where the artifact is located so that we can either download it from Gitlab, or to be used in the deployment stage
+- Once we push up our code, the pipeline should begin automatically
+    - Can go to Build -> Pipelines on the left side-bar
+    - Can click the status of the pipeline to open it in full view
+- If the job is successful, we can download the artifact
+    - This would also be the point in the pipeline where we could "send" the artifact to a cloud service to host it
+    - Either way, because we have the project built as a JAR, it is pretty easy to run it. Just do ```java -jar path-to-build.jar```
+- Runners
+    - If we have instance runners enabled, the pipeline should work just fine
+    - To test this out, we can go to Settings -> CI/CD -> Runners and uncheck the "enable instance runners" box
+        - Then, push the code again and see that the pipeline won't run
+            - "This job is stuck because you don't have any active runners that can run this job."
+    - If we wanted to make our own custom runner, we could configure that and then disable instance runners to ensure that we're using our own custom runner
+
+
+
+
+```yml
+image: gradle:7.6-jdk17 # You can adjust the Gradle and JDK version as needed
+
+variables:
+    GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+# Set up stages, or the order in which we are running this tasks/jobs:
+stages:
+    - build
+    - test
+    - deploy
+
+# Cache Settings
+cache:
+    key: ""
