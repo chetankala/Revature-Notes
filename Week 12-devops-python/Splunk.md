@@ -43,7 +43,7 @@
 - At the right of this bar, we can also change the time-range by clicking the drop-down
 - Export it - click the download button icon and select the format
 
-## Generating a CSV with people's ids and the number of pet they own:
+## Generating a CSV with People's IDs and the Number of Pets They Own:
 - We have log messages that loolk like this: ```2024-09-26 14:05:25 INFO [http-nio-8080-exec-5] AuthService:41 - Person (id: 2) now has 4 pets.```
 - So, we need to extract just the person_id from these and the pet_count
 - If all goes correctly, the CSV should look something like
