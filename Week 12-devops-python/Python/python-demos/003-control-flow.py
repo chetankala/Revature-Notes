@@ -45,10 +45,12 @@ for i in r2:
 for i in r3:
     print(i)
 
-# Iterate through list;
+# Iterate through list:
 for i in r2:
     print(L[i])
 
 # Another wat to iterate through a list
 for item in L:
     print(item) 
+
+    
