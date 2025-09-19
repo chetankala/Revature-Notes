@@ -1,7 +1,10 @@
 # Splunk
-- Tools that lets us upload logs and performs searches, reports, and generated files
+- Tool that lets us upload logs and performs searches, reports, generate files, and visualize data
 - Splunk takes in a variety of different log formats
 - As long as we have a log file and Docker to install, we are ready to use Splunk
+- Security Infomation and Event Management (SIEM): provides real-time analysisof security alerts by gathering logs and events across an organization's IT infrastructure
+- **Splunk is an SIEM tool**
+
 
 ## Installing Splunk
 - As we know, Docker lets us package dependencies/applications into an image from which we can build containers
