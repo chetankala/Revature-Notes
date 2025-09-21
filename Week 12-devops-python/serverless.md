@@ -35,3 +35,43 @@ It's a common misconception that "serverless" means there are no servers involve
 
 ## What is it?
 Function-as-a-Service (FaaS) is a serverless computing service that allows developers to run code in response to events without the complexity of building and maintaining the infrastructure typically associated with developing and launching an application. FaaS provides an efficient way to execute functions in a scalable, event-driven manner.
+
+## Lambda Functions
+Lambda functions are a popular implementation of FaaS, particularly on AWS. They enable developers to run code without provisioning or managing servers. Lambda functions are highly scalable and cost-effective, as you only pay for the compute time you consume.
+
+## Types of Events that Lambda Functions can Respond to:
+- HTTP Requests: Triggered by API Gateway or Application Load Balancer.
+- File Uploads: Triggered by events in Amazon S3.
+- Database Changes: Triggered by events in Amazon DynamoDB or RDS.
+- Scheduled Tasks: Triggered by Amazon CloudWatch events.
+
+
+# Horizontal vs Vertical Scaling
+
+## What is Horizontal Scaling? 
+Horizontal scaling, also known as scaling out, involves adding more instances of a server or resource to distribute the load. This approach is common in cloud environments where additional virtual machines or containers can be spun up to handle increased traffic.
+
+## What is Vertical Scaling? 
+Vertical scaling, also known as scaling up, involves increasing the capacity of a single server or resource. This can include adding more CPU, RAM, or storage to an existing server to handle greater loads.
+
+## Advantages and Disadvantages of Each:
+
+### Horizontal Scaling
+- Advantages:
+    - Increased redundancy and fault tolerance
+    - Better performance under heavy loads
+    - Easier to achieve near-infinite scalability in cloud environments
+- Disadvantages:
+    - More complex to manage and configure
+    - Requires load balancing and distributed computing considerations
+    - Potentially higher costs due to multiple instances
+
+### Vertical Scaling
+- Advantages:
+    - Simpler to implement and manage
+    - No need for load balancing between multiple instances 
+    - Effective for applications with consistent and predictable workloads
+- Disadvantages:
+    - Limited by the capacity of a single machine
+    - Downtime may be required to upgrade hardware
+    - Less redundancy and fault tolerance compared to horizontal scaling
