@@ -2,12 +2,15 @@
 
 /*---------------------------------------------------------------------------------------------------------*/
 
+// Data Types in JavaScript. typeof operator is used to check the data type of a variable or value.
 console.log("typeof [1,2,3,4]: ", typeof [1, 2, 3, 4]);
 console.log("typeof [1,2,3,4]: ", typeof {name: 'Hello', occupation: 'Student'});
 console.log(('a' + 5));
 
 /*---------------------------------------------------------------------------------------------------------*/
 
+// Hoisting in JavaScript. Variables and function declarations are moved to the top of their containing scope during the compile phase.
+// However, only the declarations are hoisted, not the initializations.
 if ({value: false}) {
     console.log("This is true");
 } else {
@@ -27,6 +30,8 @@ console.log("Result: " + result);
 
 /*---------------------------------------------------------------------------------------------------------*/
 
+// Closure in JavaScript. A closure is a function that remembers its outer variables and can access them.
+// Here, innerFunction is a closure that captures the variable outerVar from its outer scope.
 function outerFunction() {
     const outerVar = 'I am from outer function!';
     function innerFunction() {
@@ -77,7 +82,8 @@ proccessNumber(5, double); // Processed number: 10
 // addNumbers.forEach(function (number) {
 //     console.log(number * 2); //Double each number
 // });
- 
+
+// Example array of numbers 
 const numbers = [1,2,3,4,5];
 
 const doubledNumbers = numbers.map(function(number) {
@@ -89,6 +95,7 @@ console.log(doubledNumbers.filter(number => number % 2 === 1));
 
 /*---------------------------------------------------------------------------------------------------------*/
 
+// Example array of objects
 const people=[
     {name: "Chetan", age: 24},
     {name: "John", age: 30},
