@@ -122,7 +122,7 @@ A virtual server used for running applications on Amazon's EC2 is an instance. A
 - Very powerful and helpful in the industry
 - However, on a personal level, it can accidentally accure a lot of cost
 
-<img src ="https://www.section.io/assets/images/blog/featured-images/horizontal-vs-vertical-scaling-diagram.png" width = 1000>
+<img src ="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*kJwD0kMDHx9ZjZEHeKr8yg.png" width = 1000>
 
 - Vertical vs Horizontal Scaling
     - Vertical Scaling: Increases the power of an instance/server
@@ -160,4 +160,3 @@ Amazon S3 is an object storage built to store and retrieve any amount of data fr
     - Value (data made up of a sequence of bytes)
     - Version ID (used for versioning)
     - Metadata (data about the data that is stored)
-    
