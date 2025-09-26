@@ -56,3 +56,21 @@ It's important to distinguish AWS RDS from *other database solutions offered thr
 * AWS offers 15 database engines including *relational, key-value, document, in-memory, graph, time series, and ledger databases*.
 
 * With **RDS**, you don't need to worry about database management tasks such as server provisioning, patching, setup, configuration, backups, or recovery. The RDS manages this for you.
+
+* **RDS** is a **relational** database service, therefore, it organizes data within tables in rows and columns. Compare this to non-relational or NoSQL databases which use different mechanisms to store and retrieve data through key-value pairs, document models, etc.
+<br />
+
+
+## Regions & Availability Zones
+* An **AWS Region** is a highly available data center that houses Amazon cloud computing resources in different areas of the world (for example, North America, Europe, or Asia).
+
+* Each AWS Region contains multiple distinct locations called **Availability Zones**, or AZs.
+
+* Each Availability Zone is engineered to be isolated from failures in other Availability Zones. Each is engineered to provide inexpensive, low-latency network connectivity to other Availability Zones in the same AWS Region.
+
+* By launching instances in seperate Availability Zones, you can protect your applications from the failure of a single location. This makes AWS fault-tolerant.
+    * **Fault-tolerance** defines the ability for a system to remain in operation even if some of the components used to build the system fail.
+<br />
+
+## Security
+* A **security group** controls 

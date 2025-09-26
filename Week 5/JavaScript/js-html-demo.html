@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>JavaScript Function for converting centimeter to feet</h2>
+
+        <!--The function is called, and the return value is used-->
+        <p id="demo"></p>
+
+        <!---JavaScript code is placed inside the script element-->
+        <script>
+            function cmToFeet(cm) {
+                return cm / 30.48;
+            }
+            // The function is called, and the return value is used
+            document.getElementById("demo").innerHTML = cmToFeet(180) + " feet";
+        </script>
+    </body>
+</html>
