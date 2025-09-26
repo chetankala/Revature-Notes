@@ -146,7 +146,7 @@ Amazon S3 is an object storage built to store and retrieve any amount of data fr
     - Backup and Storage - provides data backup and storge services for others
     - Application Hosting - provides services that deploy, install, and manage web apps
     - Media Hosting - builds a redundant, scalable, and highly available infrastructure that hosts videos
-    - Software Delivery - Host your software applications which consumers can download
+    - Software Delivery - hosts your software applications which consumers can download
     - Static Websites - configure a static website to run from an S3 bucket
 
 ## S3 Buckets
