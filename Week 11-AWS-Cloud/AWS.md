@@ -99,3 +99,25 @@ While developing an application, developers may use the *AWS Software Developmen
 
 ### AMI
 - You use preconfigured templates for your instances known as Amazon Machine Images (AMIs).
+
+An AMI includes the following:
+- A template for the root volume for the instances (for example, an operating system, an application server, and applications).
+- Launch permissions that control which AWS accounts can use the AMI to launch instances.
+- A block device mapping that specifies the volumes to attach to the instance when it's launched.
+
+### What is an EC2 Instance?
+A virtual server used for running applications on Amazon's EC2 is an instance. An instance can be understood as a small part of a large computer (having it's own hard drive, network connection, OS, etc). You can have multiple small computers on a single physical machine, and all these small machines are called instances.
+
+### EBS - Elastic Block Store
+- Elastic Block Store is a system storage for Amazon EC2 VMs.
+- An "EBS-backed" instance is an EC2 instance which uses an EBS volume as it's root device.
+
+- EBS volumes are redundant, "virtual" drives, which are not tied to any particular hardware, however, they are restricted to a particular EC2 Availability Zone. This means that an EBS volume can move from one piece of hardware to another within the same availability zone.
+
+- You can think of EBS volumes as a kind of Network Attached Storage.
+
+
+## Autoscaling
+- The idea that we want to automatically scale the amount of resources at our disposal
+- Very powerful and helpful in the industry
+- However, on a personal level, it can accidentally accure a lot of cost
