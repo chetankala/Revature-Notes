@@ -73,4 +73,29 @@ It's important to distinguish AWS RDS from *other database solutions offered thr
 <br />
 
 ## Security
-* A **security group** controls 
+* A **security group** controls the access to a DB instance. It does so by allowing access to IP address ranges or Amazon EC2 instances that you specify.
+
+* You can set security groups when configuring your RDS instance.
+
+
+## How to Interact with Amazon RDS
+There are several ways that you can interact with Amazon RDS
+
+### 1. AWS Management Console
+You can manage your DB instances from the console with no programming required. To access the Amazon RDS console, sign in to the AWS management console and open the Amazon RDS console at <a href="https://signin.aws.amazon.com/signin?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&redirect_uri=https%3A%2F%2Fus-east-2.console.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_si%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-2_ec31d01ec48f0a8c%26useDefaultRegion%3Dtrue&page=resolve&code_challenge=fArky4u7CydexiWWLMkebHePrexd33umKbZ_zx6jho4&code_challenge_method=SHA-256&backwards_compatible=false&scope=openid">https://console.aws.amazon.com/rds/</a>
+
+### 2. Command Line Interface
+You can use the AWS Command Line Interface (AWS CLI) to access the Amazon RDS API interactively. Install the AWS CLI [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html). To begin using the AWS CLI with RDS, view the [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/rds/).
+
+### 3. Programatically Accessing Amazon RDS
+While developing an application, developers may use the *AWS Software Development Kits (SDKs)* and utilize the [RDS Application Programming Interface (API)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/ProgrammaticAccess.html) to automate tasks for managing DB instances and other objects in Amazon RDS.
+
+
+## What is AWS EC2?
+- AWS EC2 (Elastic Cloud Compute) is a web service offered by Amazon that provides resizable compute capacity in the AWS cloud. 
+- It enables you to manage a Linux/UNIX and Windows server instances in Amazon's data centers.
+- It offers Infrastructure-as-a-Service (IaaS). 
+- It provides complete control of computing resources, which one can scale as per the requirement.
+
+### AMI
+- You use preconfigured templates for your instances known as Amazon Machine Images (AMIs).
