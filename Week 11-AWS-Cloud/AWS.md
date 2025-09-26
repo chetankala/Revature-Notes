@@ -126,7 +126,7 @@ A virtual server used for running applications on Amazon's EC2 is an instance. A
 
 - Vertical vs Horizontal Scaling
     - Vertical Scaling: Increases the power of an instance/server
-    - Horizontal Scsling: Increases the number of instances/servers
+    - Horizontal Scaling: Increases the number of instances/servers
     - In the past, vertical scaling was primarily used
         - It took a lot of time to provision and configure new servers
     - Today, companies such as Amazon have setup really convenient ways to provision new servers
