@@ -121,3 +121,43 @@ A virtual server used for running applications on Amazon's EC2 is an instance. A
 - The idea that we want to automatically scale the amount of resources at our disposal
 - Very powerful and helpful in the industry
 - However, on a personal level, it can accidentally accure a lot of cost
+
+<img src ="https://www.section.io/assets/images/blog/featured-images/horizontal-vs-vertical-scaling-diagram.png" width = 1000>
+
+- Vertical vs Horizontal Scaling
+    - Vertical Scaling: Increases the power of an instance/server
+    - Horizontal Scsling: Increases the number of instances/servers
+    - In the past, vertical scaling was primarily used
+        - It took a lot of time to provision and configure new servers
+    - Today, companies such as Amazon have setup really convenient ways to provision new servers
+        - This has opened the door to horizontal scaling
+
+Generally speaking, the more expensive vertical scaling becomes, the higher scale you go. This becomes inefficient, which makes horizontal scaling generally more efficient, money-wise.
+
+Even small companies must now be prepared to scale their products globally. This has many challenges, but since that is where demand is, that is where the money is.
+
+
+# Amazon Simple Storage Service (S3)
+Amazon S3 is an object storage built to store and retrieve any amount of data from anywhere on the internet.
+
+- You can store any type of file in S3
+- S3 is designed to deliver 99.99999999% durability
+- Typical use-cases include:
+    - Backup and Storage - provides data backup and storge services for others
+    - Application Hosting - provides services that deploy, install, and manage web apps
+    - Media Hosting - builds a redundant, scalable, and highly available infrastructure that hosts videos
+    - Software Delivery - Host your software applications which consumers can download
+    - Static Websites - configure a static website to run from an S3 bucket
+
+## S3 Buckets
+- Files are stored in buckets
+- Buckets are root level folders
+- Buckets store objects, which consist of data and its descriptive metadata
+- Unlimited storage available 
+- You create buckets within a REGION
+- Objects consist of:
+    - Key (name of object)
+    - Value (data made up of a sequence of bytes)
+    - Version ID (used for versioning)
+    - Metadata (data about the data that is stored)
+    
