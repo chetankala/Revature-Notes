@@ -3,7 +3,7 @@
 - Splunk takes in a variety of different log formats
 - As long as we have a log file and Docker to install, we are ready to use Splunk
 - Security Infomation and Event Management (SIEM): provides real-time analysis of security alerts by gathering logs and events across an organization's IT infrastructure
-- Security Orchestration, Automation, amd Response (SOAR): technology which integates software that can automate tasks and streamline incident and threat response workflows
+- Security Orchestration, Automation, and Response (SOAR): technology which integates software that can automate tasks and streamline incident and threat response workflows
 - **Splunk is a SIEM and a SOAR tool**
 
 
