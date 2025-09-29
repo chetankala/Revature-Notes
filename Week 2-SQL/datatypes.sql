@@ -7,7 +7,7 @@ CREATE TABLE employees (
     first_name varchar(100), -- Variable character string with a maximum length of 100
     last_name varchar(100), 
     department_code char(3), -- Fixed-length character string of length 3
-    age tinyint, -- Tiny integer
+    age tinyint, -- Tiny integer is used for small numbers (0 to 255) if unsigned
     hourly_rate decimal(5,2), -- Decimal number with 5 digits total and 2 digits after the decimal point
     hire_date date, -- Date
 );
