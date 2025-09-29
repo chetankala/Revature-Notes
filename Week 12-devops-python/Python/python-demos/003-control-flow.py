@@ -49,8 +49,14 @@ for i in r3:
 for i in r2:
     print(L[i])
 
-# Another wat to iterate through a list
+# Another way to iterate through a list
 for item in L:
     print(item) 
+# Iterate through a list and get the index of each item
+for index, item in enumerate(L):
+    print("index: {}, item: {}".format(index, item))
+# Iterate through a string
+for char in "Hello":
+    print(char)
 
     
