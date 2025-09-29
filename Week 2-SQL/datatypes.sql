@@ -17,6 +17,7 @@ CREATE TABLE employees (
 INSERT INTO employees VALUES('Charlie', 'Johnson', 'CUS', 32, 15.50, '2022-01-15');
 SELECT * FROM employees; -- Select all records to verify insertion
 
+-- default keyword can be used to auto-generate values for columns with default constraints like IDENTITY
 INSERT INTO employees VALUES(default, 'Alice', 'Smith', 'HR', 29, 20.00, '2021-06-01');
 SELECT * FROM employees;
 
