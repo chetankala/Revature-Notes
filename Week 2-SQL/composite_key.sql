@@ -20,3 +20,12 @@ CREATE TABLE branch (
 );
 
 --Step 2: Create a table works_path
+CREATE TABLE works_path (
+    employee_id INT, -- Foreign key column
+    client_id INT, -- Foreign key column
+    sales INT, -- Sales column
+    PRIMARY KEY (employee_id, client_id), -- Composite primary key
+    FOREIGN KEY (employee_id) REFERENCES employee(employee_id) ON DELETE CASCADE, -- Foreign key constraint
+    FOREIGN KEY (client_id) REFERENCES Client(client_id) ON DELETE CASCADE -- Foreign key constraint
+);
+
