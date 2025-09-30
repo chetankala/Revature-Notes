@@ -1,7 +1,7 @@
 -- Delete the emplyees table if it exists
 DROP TABLE employees;
 
--- Create the emplyees table with various data types
+-- Create the emplyees table with various data types. CREATE TABLE is used to create a new table
 CREATE TABLE employees (
     id int IDENTITY(1,1) PRIMARY KEY, -- Integer with auto-increment and primary key. In MySQL IDENTITY is AUTO_INCREMENT
     first_name varchar(100), -- Variable character string with a maximum length of 100
@@ -19,7 +19,7 @@ SELECT * FROM employees; -- Select all records to verify insertion
 
 -- default keyword can be used to auto-generate values for columns with default constraints like IDENTITY
 INSERT INTO employees VALUES(default, 'Alice', 'Smith', 'HR', 29, 20.00, '2021-06-01');
-SELECT * FROM employees;
+SELECT * FROM employees; -- SELECT is used to query data from a database. FROM specifies the table to query
 
 INSERT INTO employees (first_name, last_name, department_code, age, hourly_rate, hire_date) VALUES('Bob', 'Brown', 'IT', 35, 25.75, '2020-03-20');
 SELECT * FROM employees;
