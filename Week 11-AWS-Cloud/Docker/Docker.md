@@ -16,7 +16,7 @@ Linux Conatiners are the foundation of most modern container systems.
         - any state that is needed for the application should be stored in a way that is detachable from the actual container
     - Virtualized and isolated
 
-More benefits of containers:
+- More benefits of containers:
     - Secure
     - Standardized and portable
     - Lightweight
@@ -124,11 +124,13 @@ Defines everything needed for an image. It outlines the starting point, dependen
 For more information, view this cheat sheet: https://kapeli.com/cheat_sheets/Dockerfile.docset/Contents/Resources/Documents/index 
 
 
+
 # Building an Image
 There are two ways to create an image:
 
 -   Using the `docker build anyflags PATH` command in the CLI
     -   This is how you can create an image with a dockerfile
+
 -   Using `docker commit flags CONTAINER imagename` command in the CLI
     -   You are committing the changes from the container specified to the image specified
     -   You are creating an image based off of an existing docker container
@@ -136,3 +138,46 @@ There are two ways to create an image:
 
 # Creating a Container
 There are two ways to create a Docker container
+
+-   Using `docker create imagename` in the CLI
+    -   This creates a container in its created state, and configures and sets it up to be run, including the writable layer on the image from which the container is created
+
+-   Using `docker run flags imagename` in the CLI
+    -   This will pull the image from the registry if it does not exist locally
+    -   Create and run the container automatically
+
+
+# Managing Containers:
+Some useful commands to manage containers include:
+-   `docker containers ls` displays all running containers
+-   `docker ps -a` displays all containers
+-   `docker containers kill containerID` can be used to stop a container
+-   `docker containers pause containerID` can pause the processes in the container
+-   `docker containers start containerID` can start the processes in the container
+-   `docker container rm flags containerID` will remove a container
+-   `docker volume rm volumename` will remove a volume
+
+There are more commands in this cheatsheet: https://dockerlabs.collabnix.com/docker/cheatsheet/
+
+
+# Docker Networking
+
+One of the reasons Docker containers and services are so powerful is that you can connect them together, or connect them to non-Docker workloads. Docker containers and services do not need to be aware that they are deployed on Docker, or whether their peers are also on Docker workloads or not. Whether your Docker hosts run Linux, Windows, or a mix of the two, you can use Docker to manage them in a platform-agnostic way.
+
+By default, Docker provides two network drivers for you, the `bridge` and the `overlay` drivers. You can also write a network driver plugin so that you can create your own drivers but that is an advanced task.
+
+To add a container to a network, use the command `docker run -d --net=bridge --name nameofcontainer`
+
+
+# Docker Best Practices
+The goals of containerization are:
+
+-   ephemeral containers: the containers should be easy as possible to tear down and build up requiring minimal configuration
+-   lightweight containers and images
+-   Be mindful to build context, aka what directory we are building in
+-   Try to leverage multi-stage builds and image cache
+-   Each container should only serve one purpose
+-   Make commands in dockerfiles readible by seperating them on different lines
+-   Use volumes to persist data
+-   Use secrets for sensitive data and config files for configurations that are not sensitive
+
