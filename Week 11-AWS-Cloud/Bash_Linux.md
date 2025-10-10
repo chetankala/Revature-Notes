@@ -35,10 +35,10 @@ Stream redirect
 ## Example
 ```Bash
 #!/bin/bash
-echo "Hello World"
+echo "Hello World"  # echo print out statements
 
 echo "Please enter your name:"
-read user_name
+read user_name     # read inputs data
 
 echo "Hello, $user_name! Welcome to the Bash scripting world."
 ```
