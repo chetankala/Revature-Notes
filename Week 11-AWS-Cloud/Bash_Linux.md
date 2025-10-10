@@ -24,6 +24,7 @@ WSL - Windows subsystem for Linux
 - ```mv``` - move a file
 - ```rm``` - delete a file or directory (with the -r flag)
 
+More information on Bash commands: [here](https://www.w3schools.com/bash/bash_commands.php)
 
 Stream redirect
 - ```>``` to overwrite a file
