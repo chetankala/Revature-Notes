@@ -50,3 +50,19 @@ It allows for the detection of defects and errors at an early stage, which reduc
 The deployment phase is where operators deploy an application to a production environment. They may also perform maintenance tasks on the application.
 In the deployment phase, Infrastructure-as-a-Code helps build the production environment. Then, various tools are used to release the build. Tools used in this phase include AWS CodeDeploy, Octopus Deploy, Jenkins, and IBM Urban Code Deploy.
 The deployment phase is a dynamic stage in the DevOps lifecycle. It ensures that code changes are rapidly and reliably deployed to production servers. This allows for frequent releases and continuous improvement.  
+
+## Monitoring
+The monitoring phase involves monitoring the health, performance, and reliability of the application or code, as well as the infrastructure. This phase ensures the smooth functioning and performance of the application.
+During this phase, developers collect data, monitor each function, and spot errors like low memory or server connections are broken. For example, when users log in, they should access their account, and a failure to do so means there's a problem with the application.
+
+## Operating
+The operating phase is when the software is monitored, managed, and maintained in the production environment. The operations team is responsible for keeping the application online. This includes:
+- Configuring and provisioning servers using tools like Chef
+- Managing the service's stability and uptime
+- Managing the infrastructure that hosts the code
+- Monitoring the DevOps pipeline based on data collected from customer behavior and application performance
+The operating phase is one of the most crucial phases of the DevOps lifecycle. It's when the operations team performs tasks to keep the application online. 
+
+## Feedback
+The continuous feedback phase involves evaluating the effect of each release on the user experience. The evaluation is reported back go the team to improve future releases. The feedback can be gathered in two methods: structured and unstructured. DevOps teams can collect feedback through various avenues, such as questionares, surveys, and social media. The continuous feedback phase is an integral part of the DevOps life cycle. It serves as a crucial link between the operations and development phases. It enables the ongoing analysis and improvement of the application throughout its lifecycle.
+
