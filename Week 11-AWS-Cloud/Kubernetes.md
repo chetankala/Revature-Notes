@@ -45,3 +45,7 @@ With the `kubectl` command, we can tell the K8s cluster to create a new resource
 *A Kubernetes manifest is a configuration file that defines how an application runs on Kubernetes platform. It describes the desired state of Kubernetes objects, such as pods, services, and deployments. Manifests are written in YAML or JSON fomrats. Manifests are used to create, update, or delete resources in a Kubernetes cluster. They allow you to deploy, scale, and update appliations in a consistent and reproducible way. When a manifest is applied to a Kubernetes cluster, Kubernetes creates an object based on the configuration.*
 
 Manifests can be applied to a K8s cluster, and are idempotent (they'll only modify the cluster if there is some difference between the current state of the cluster and the desired state declared in the manifest), so they provide a safe and repeatable way to manage a K8s environment.
+
+
+## Kubernetes Abstraction
+Kubernetes depends on the difference between the physical devices used to host the cluster, and the logical abstractions that can facilitate to provide resiliance and manage complex behaviors. Some of the abstractions that we can use inlude Namespaces to help organize resources...
