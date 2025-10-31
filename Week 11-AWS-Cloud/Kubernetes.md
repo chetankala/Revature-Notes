@@ -42,10 +42,22 @@ By using `kubectl` (kube control) commands.
 
 With the `kubectl` command, we can tell the K8s cluster to create a new resource, manage exisiting resources, or inspect a status to name just a few capabilities. `kubectl` allows developers to interact with the cluster directly, declaring a resource to create and defining it attributes in the terminal CLI, or through a script called a Manifest...
 
-*A Kubernetes manifest is a configuration file that defines how an application runs on Kubernetes platform. It describes the desired state of Kubernetes objects, such as pods, services, and deployments. Manifests are written in YAML or JSON fomrats. Manifests are used to create, update, or delete resources in a Kubernetes cluster. They allow you to deploy, scale, and update appliations in a consistent and reproducible way. When a manifest is applied to a Kubernetes cluster, Kubernetes creates an object based on the configuration.*
+*A Kubernetes manifest is a configuration file that defines how an application runs on Kubernetes platform. It describes the desired state of Kubernetes objects, such as pods, services, and deployments. Manifests are written in YAML or JSON formats. Manifests are used to create, update, or delete resources in a Kubernetes cluster. They allow you to deploy, scale, and update appliations in a consistent and reproducible way. When a manifest is applied to a Kubernetes cluster, Kubernetes creates an object based on the configuration.*
 
 Manifests can be applied to a K8s cluster, and are idempotent (they'll only modify the cluster if there is some difference between the current state of the cluster and the desired state declared in the manifest), so they provide a safe and repeatable way to manage a K8s environment.
 
 
 ## Kubernetes Abstraction
 Kubernetes depends on the difference between the physical devices used to host the cluster, and the logical abstractions that can facilitate to provide resiliance and manage complex behaviors. Some of the abstractions that we can use inlude Namespaces to help organize resources...
+
+*In Kubernetes, a namespace is a way to organize a cluster into virtual sub-clusters. Namespaces can be useful when multiple teams or projects share a cluster. They provide scope for Kubernetes resource names and can help isolate resources logically. Namespaces are logically separated from each other, but they can communicate with each other. Namespaces are an abstract resource that enable Kubernetes to set boundaries for other resources. Once you create a namespace, you can assign Kubernetes resources such as services, pods, secrets, and config maps to namespace. You can think of each namespace as a folder that holds a set of objects. By default, the kubectl command-line tool interacts with the default namespace. If you want to use a different namspace, you can pass kubectl the --namespace flag.*
+
+Deployments to help manage sets of pods that share a purpose...
+
+*A Kubernetes deployments is a resource object that allows administrators to describe the life cycle of an application. Deployments provide declarative updates to applications, including which images to use, the number of pods, and how you update them. Deployments also tell Kubernetes how to create or modify instances of the pods that hold a containerized application. Deployments can help to scale the number of replica pods, enable the rollout of updated code in a controlled manner, or roll back to an earlier deployment version if necessary. Deployments are very flexible. They can be used to create a Pod for an application, and to scale the application by creating multiple instances. Updating instances is done easily by updating one after another.*
+
+Services to help organize networking for a deployment...
+
+*In Kubernetes, a service is a network abstraction for a group of pods. A service is a logical collection of pods in a cluster. Services are often used to power a microservice architecture. A service defines a logical set of pods and a policy for accessing them. Services enable a loose coupling between dependent pods. Services are defined using YAML or JSON. When a network request is made to a service, it selects all pods in the cluster that match the service's selector. It then chooses one of the pods and forwards the request to it. Services can be used to load balance across pods, or expose an application deployed on a set of pods. Kubernetes supports four types of services: ClusterIP, NodePort, LoadBalancer, Ingress.*
+
+While abstractions like Replica Sets and Daemon Sets can help developers manage the lifecycle of pods, or the environment that a pod runs in. 
