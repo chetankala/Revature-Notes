@@ -1,0 +1,46 @@
+<body>
+    <div class="test"> This is a div element with class="test"</div>
+
+    <p class="test">
+        <h1 class="test"> This is a h1 element with class="test"</h1>
+        This is a paragraph.
+    </p>
+    <input id="input">
+
+    <p class="test">This is a p element with class="test"</p>
+    <button onclick="myFunc()">Click me</button>
+
+    <script>
+        let input = document.getElementById("input");
+        console.log(input);
+
+        // Getting all elements with class="test"
+        var elementsArrayWithTestClass = document.getElementsByClassName("test");
+        for (var element of elementsArrayWithTestClass) {
+
+            // Changing background color of each element with class="test"
+            elementsArrayWithTestClass[elem].style.background = "yellow";
+            console.log(element);
+        }
+
+        async function myFunc() {
+            // get response object
+            let response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+
+            // extract data from response body
+            let data = await response.json();
+
+            // log the data to console
+            console.log(data);
+        }
+
+        async function test(){
+            console.log('Ready');
+            let example = await fetch('http://httpbin.org/get');
+            console.log('I will print second');
+        }
+
+    await test();
+    console.log('I will print first');
+    </script>
+</body>
