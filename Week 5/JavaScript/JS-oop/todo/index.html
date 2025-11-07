@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Todo App</title>
+    <style> /* Internal CSS for basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #todoForm {
+            margin-bottom: 20px;
+        }
+
+        #todoInput {
+            width: calc(100% - 90px);
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        #addButton {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f4f4f4;
+            margin-bottom: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .completedButton {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Todo App Container -->
+    <div class="container">
+        <h1>Todo List</h1>
+        <form id="todoForm">
+            <!-- Input Field and Add Button -->
+            <input type="text" id="todoInput" placeholder="Enter a new todo">
+            <button type="submit" id="addButton">Add Todo</button>
+        </form>
+        <!-- Todo List Element/Container -->
+        <ul id="todoList"></ul>
+    </div>
+
+    <!-- JavaScript for Todo App Functionality -->
+    <script src="app.js" type="module"></script> <!-- Type module explicit so browser err goes away -->
+</body>
+</html>
+
