@@ -13,6 +13,8 @@ export class TodoService {
             if (!response.ok) {
                 throw new Error(`Failed to fetch todos: ${response.statusText}`);
                 }
+
+            // Parse the JSON response and return it
             return await response.json();
             } catch (error) {
                 console.error("Error fetching todos:", error);
@@ -25,18 +27,22 @@ export class TodoService {
         try {
             const response = await fetch(`${this.apiUrl}/todo/todo`, {
                 method: "POST",
-                headers: {
+                headers: { 
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(todo)
             });
+
+            // Check if the response is successful
             if (!response.ok) {
                 throw new Error(`Failed to add todo: ${response.statusText}`);
             }
             console.log(`todo before response ${todo}`);
 
             return await response.json();
+
+        // Handle errors and log them
         } catch (error) {
             console.error("Error adding todo:", error);
             return null;
