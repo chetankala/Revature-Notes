@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Todo App with Service</title>
+    <script>src="style.css"</script>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <form id="todoForm">
+            <input type="text" id="todoInput" placeholder="Enter a new todo">
+            <button type="submit" id="addButton">Add</button>
+        </form>
+
+        <!-- Todo List Element/Container-->
+        <ul id="todoList"></ul>
+    </div>
+
+    <!-- Include the JavaScript file -->
+    <script src="app-for-service.js" type="module"></script> <!-- Type module explicit so browser error goes away -->
+</body>
+</html>
