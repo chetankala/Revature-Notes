@@ -12,7 +12,7 @@ export class TodoService {
             const response = await fetch(`${this.apiUrl}/todo/todos`);
             if (!response.ok) {
                 throw new Error(`Failed to fetch todos: ${response.statusText}`);
-                }
+            }
 
             // Parse the JSON response and return it
             return await response.json();
