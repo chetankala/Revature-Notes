@@ -18,3 +18,11 @@
     - Services are pure logic files written in Typescript. They hold functions, variables, and classes that are generally shared across components.
     - Modules are collections of components, services, and other modules that organize the application. 
 - Angular has a CLI that used "ng" for its commands.
+
+## Typescript (TS)
+
+- A superset of JavaScript
+    - All valid JS is valid TS. (Everything that JS can do, TS must be able to do as well.) The reverse however is not true.
+- TS is an open-source, object oriented, portable and strongly typed language. 
+    - OOP - it supports classes, inheritence, interfaces, access modifiers etc.
+    - TS files traditionally have ".ts" as their file extensions.
