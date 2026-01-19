@@ -26,3 +26,7 @@
 - TS is an open-source, object oriented, portable and strongly typed language. 
     - OOP - it supports classes, inheritence, interfaces, access modifiers etc.
     - TS files traditionally have ".ts" as their file extensions.
+- Browsers are designed to run JS. They do not know what TS is. Thus, TS needs the be "transpiled" into JS in order to be run by most environments.
+    - The term transpiled is used to indicate that you are converting between two programming languages that are considered to be at the same level. I.e. both TS and JS are high level programming languages so converting between them is called transpiling. Traditionally this is opposed to compiling which is going from a high level language to a lower level language.
+
+## Typescript datatypes
