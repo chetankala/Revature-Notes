@@ -109,3 +109,27 @@ The `package.json` has more high-level information about dependencies and then d
 - Components can be added to the page by creating an HTML tag with the component's name as defined by the selector for the tag name. 
 
 ## Data Binding
+
+- In Angular, data binding provides for the communication between a component's HTML and values in the TS file.
+- It is a technique used to bind the data from the TS class to the HTML template that is then updated on the DOM and vice versa. This is not a concept that is unique to Angular, but Angular provides significant support for it compared to other frameworks/libraries.
+- One-way data binding allows us to manipulate the views through our models if we make changes to the values in our TS classes, generally at runtime.
+    - String interpolation (often just as referred to as interpolation) - This displays the value of  component's variable as text on the HTML document. Syntactically it uses double curly brces in the HTML.
+        - E.g. `<p>{{myVar}}</p>`
+        - `let myVar:string = "hello world"`
+        - Renders a paragraph element on the HTML with the value hello world. 
+    - Property binding - This binds the value of a component's variable to the attribute of an HTML element. When the value changes so does the attribute. This uses brackets around the attribute name.
+        - `<tag [attribute-name]="var-name">value</tag>`
+        - E.g. `<img [src]="image">` // Whatever URL is contained in the TS variable image is what this image tag will display.
+    - Event binding - Allows you to bind DOM events such as button clicks or mouseovers to a function. Essentially this sets up event listeners for you and uses parentheses around the event in the opening tag for syntax. 
+        - `<tag (event)="function"></tag>`
+        - E.g. `<button (click)="myFunc()"/>`
+- Two-way data binding:
+    - This combines property binding with event binding to allow information to flow between the HTML document to the script and back. It is particularly useful in gathering user inputs in things like forms. Note that the functionality is contained in the FormsModule of Angular.
+    - Two-way binding will trigger on the event of user input into an input field and update the value attribute along with the variable that is bound in the component class. This uses the `ngModel` directive inside parentheses inside brackets.
+        - `<input [(ngModel)]="var-name"/>`
+        - E.g. `<input type="text" [(ngModel)]="myVar"/>`
+
+## Angular Model
+
+- Modules are classes in Angular that are designed to organize related parts of our project together, allowing for modularization. They use the `@NgModule` decorator above the class.
+- Dependencies for our Angular application will also often be Modules such as the FormsModule or the HTTPClientModule.
