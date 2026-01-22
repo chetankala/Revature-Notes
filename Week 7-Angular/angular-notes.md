@@ -94,3 +94,18 @@ Navigation between what appears to be seperate pages of the website is in fact, 
 The `package.json` has more high-level information about dependencies and then details are defined in the `package-lock.json`.
 
 ## Angular Components
+
+- Components in Angular are essentially pieces of a webpage that can be displayed or removed by the application when necessary.
+- The CLI will generate components for you with all the required files and list it in the base module. This, however, is a convenience feature and can be done manually.
+- Components are made up of usually 4 files: html, css, ts, and spec.ts (optional).
+- Components are given their unique functionality in the framework with the `@Component` decorator.
+    - A decorator is basically the same as an annotation in Java.
+    - The `@Component` is placed on a class and will define 3 values:
+        - The name of the component to be used elsewhere in the application with the "selector" field.
+        - `styleUrls` will define the component's stylesheet. 
+        - `templateUrls` will define the HTML for the component.
+        - `styleUrls` and `templateUrl` can be replaced with fields that take raw CSS and HTML respectively instead of using external files, but in Angular, this is considered poor practice. 
+- Components are TS classes which means they have a constructor, fields variables, and methods/functions. The class needs to be exported so it can be combined with the rest of the application.
+- Components can be added to the page by creating an HTML tag with the component's name as defined by the selector for the tag name. 
+
+## Data Binding
