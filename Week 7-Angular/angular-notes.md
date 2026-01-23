@@ -133,3 +133,57 @@ The `package.json` has more high-level information about dependencies and then d
 
 - Modules are classes in Angular that are designed to organize related parts of our project together, allowing for modularization. They use the `@NgModule` decorator above the class.
 - Dependencies for our Angular application will also often be Modules such as the FormsModule or the HTTPClientModule.
+- Ultimately, the module can be thought of ensuring that all necessary parts of the application such as components, services, and other modules are bundled together so that they can see each other and the application as a whole can access them.
+- `NgModule` decorator has 4 fields that it sets:
+    - `Declarations`: This is where components are included in the module.
+    - `Imports`: This is where other modules are included.
+    - `Providers`: This is where services are included. Services created in the app folder for a base project be already visible so are required to be included in a module, but if you want to restrict them to a particular module or you want to export them within a module then it must be included as a provider.
+    - `Bootstrap`: This defines the "root" component of the module. Essentially, which component needs to be loaded first to load the others. (This has nothing to do with Bootstrap the CSS framework.)
+- The CLI will automatically include new components it generates in the base module, so you don't have to. However, if you manually create components, you will need to add them to the module as well.
+
+# Angular Directives
+
+- Directives are markers in the HTML templates of Angular Components. They provide functionality for DOM manipulation.
+- Angular will see the directives when building and insert the necessary logic to fulfill them.
+- Directives can change appearance, behavior, layout, etc. of the elements and their children. Generally, they begin with "ng".
+
+## 3 Types of Directives:
+
+1. **Component Directive**: Components in Angular are considered directives as well. All components automatically use the component directive to be added onto the HTML page.
+2. **Structural Directives**: These change the structure of the HTML page. They will actually add or remove elements from the page. They are identified with a "*" before the "ng".
+    - Example: `*ngIf`, `ngFor`
+3. **Attribute Directives**: Used to change or alter existing elements on the page via their attributes.
+    - Example: `ngModel`, `ngStyle`, `ngClass`
+
+## Built-in Directives:
+
+- `*ngIf`: Adds or removes an element based on a boolean expression.
+- `*ngFor`: Iterates over an array to create elements for each value in that array.
+- `ngClass`: Used to change/define the class of an HTML element. The variable assigned can have 3 different types:
+    - String: The classes are declared with a string, the same way you would declare classes for an element in HTML.
+    - String Array: The classes are defined as individual strings in the array, and the directive will combine them to make the attribute string. 
+    - Object: Each key in the object is a possible class, and the value is a boolean indicating if that class is active. 
+- `ngStyle`: Used to change the style attribute of an element based on a variable or expression. 
+- `ngModel`: Attribute directive used in the FormsModule for two-way binding.
+- `ngSwitch`: Used for switch case functionality in the HTML template.
+
+## Custom Directives
+- Custom Directives can be created with the CLI using the command `ng generate directive <location/name>`.
+
+# Pipes
+
+- Pipes provide ways to transform values in Angular. Pipes use the "`|`" character and can take various inputs to return refactored values.
+- Built-in pipes include Date, Decimal, Currency, Percent, Slice, Lowercase/Uppercase, Titlecase, Json.
+- Async pipes handle transformation asynchronously with promises or observables.
+- You can create your own custom pipes using the `@Pipe` decorator and generating them with the CLI.
+
+# Services
+
+- Services are used to organize and share business logic. They hold models, functions, data used across multiple components.
+- An Angular Service is a singleton instance that can be dependency injected into multiple components. This makes code highly reusable.
+- Components should use dependency injection to access the services they require.
+- Services are identified with the `@Injectable` decorator.
+
+## Routing
+
+- In an SPA, all the information is frontloaded with an initial request/response
