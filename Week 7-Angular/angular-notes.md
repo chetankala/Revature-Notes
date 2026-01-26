@@ -252,3 +252,67 @@ In this example, the `UserService` is injected into the `UserComponent` through 
 ---
 
 **Spring Controller DI Example:**
+
+Let's assume you have a Spring Boot application with a controller that handles REST endpoints related to users. You want to inject a service named `UserService` into the controller.
+
+- **UserService:**
+
+```java
+@Service
+public class UserService {
+    public List<User> getUsers() {
+        // Logic to retrieve users from a db
+    }
+}
+```
+
+- **UserController:**
+
+```java
+@RestController
+@RequestMapping("/users")
+public class UserController {
+    private final UserService userService;
+
+    //@Autowired is an annotation used to automatically inject dependencies into a Spring bean. It simplifies the process of connecting different components of an application by letting the Spring container handle the creation and injection of necessary objects.
+    @Autowired
+    public UserController(UserService userService){
+        this.userService = userService;
+    }
+
+    @GetMapping
+    public List<User> getUsers(){
+        return userService.getUsers();
+    }
+}
+```
+
+- In this Spring example, the `UserService` is injected into the `UserController` through constructor injection. Spring manages the instantiation of the `UserService` and provides it to the controller.
+
+- Both Angular and Spring use dependency injection to manage the relationships between components, services, and other classes, making the code more modular, testable, and maintainable.
+
+- They ensure efficiency by using the singleton design pattern.
+
+## Lifestyle Hooks:
+
+- Lifecycle Hooks are functions inherited by Component classes that trigger at certain times during the Component's lifecycle.
+- `ngOnChanges()`: Called after the constructor but before `ngOnInit` and also when data-bound input changes.
+- `ngOnInit()`: Called immediately after the first `ngOnChanges` and only once.
+- `ngOnDestroy()`: Runs before the component is unmounted.
+- There are other Lifecycle hooks that occur at different points in the lifecycle.
+
+## Event Emitters:
+
+- Custom events that send information between components synchronously or asynchronously.
+- Utilizes the `@Input` and `@Output` decorators.
+- Enables communication between nested components.
+
+## Publisher/Subscriber (Pub/Sub) Design Patterns:
+
+- Describes a flow of messages between applications, devices, or services.
+- Publishers push messages to channels (streams).
+- Subscribers are subscribed to channels and are notified of new messages produced by publishers.
+- Applications can be both a publisher and subscriber.
+    <img src="pubsub.png" alt="Example Image" width="200" height="300">
+
+    
