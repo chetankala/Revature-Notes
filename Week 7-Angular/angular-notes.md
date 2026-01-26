@@ -186,4 +186,69 @@ The `package.json` has more high-level information about dependencies and then d
 
 ## Routing
 
-- In an SPA, all the information is frontloaded with an initial request/response
+- In an SPA, all the information is frontloaded with an initial request/response that downloads the page and the attached CSS/JS files. However, we can mimic the experience of browsing multiple pages with routing. Routes allow for navigation initially to a displayed component via URL and the ability to "swap" one component with another through internal links.
+- Routing requires the `RoutingModule` in Angular. It can be included in the initial project setup with a `--routing` flag.
+- Once routing is set up, you define various URL paths in your application that leads to a specific components being displayed by configuring the `app-routing.module.ts` file.
+- The `<router-outlet>` element defines where the component that is being routed to will appear.
+- The `RoutingModule` includes "route guards" functionality to deny users based on authorization access to certain routes.
+- To include routing with internal links, you use `routerLinks`.
+    - An anchor tag will need the attribute `routerLinkActive` to be set to active in order to change the functionality of the anchor to route instead of sending a GET request through the browser. Then the `routerLink` attribute is set the URL path that indicates the specific component to render.
+
+## Webpack
+
+- In a web application when we might want to use many JS files for a single HTML page it makes more sense to combine these files they are retrieved with a single (or just a few) requests instead of having to request each file from its location individually. 
+- Module bundlers are utility tools used to combine or bundle several JS files into a single file. Angular uses Webpack which is a Module bundler "under the hood" when building or serving your application to do this.
+- Webpack is a static module bundler for JS. It does not work with TS, so the Angular TS files must first be transpiled (with the tsc transpiler) to JS for Webpack to bundle.
+
+# Design Patterns in Angular
+
+- Design patterns are reusable solutions to common architectural and structural challenges that developers encounter when building applications.
+- These patterns provide established and proven ways to organize code, handle communication between components, manage state, optimize performance, and ensure maintainability and scalability of Angular applications.
+
+**Dependency Injection (DI):**
+
+- DI is a design pattern where an object recieves its dependencies (other objects that contain functions/methods/data, etc.) from the framework instead of the developer hard coding in the objects directly.
+- DI does not ever use the "new" keyword.
+- Angular uses constructor injection for its DI strategy. Injectable objects are listed in the constructor's parameters, and Angular uses the private access modifier to manage dependencies.
+- DI is not unique to Angular and other injection strategies like setter injection, field injection, and interface injection exist, but Angular does not support these.
+
+**Angular DI Example:**
+
+Let's say you have a service named `UserService` that handles user-related operations. You want to inject this service into a component called `UserComponent`.
+
+- **UserService:**
+
+    ```typescript
+    import { Injectable } from `@angular/core`;
+    
+     @Injectable()
+     export class UserService {
+        getUsers(){
+            // Logic to fetch users from a data source
+        }
+     }
+    ```
+
+- **UserComponent:**
+
+    ```typescript
+    import {Component} from '@angular/core';
+    import {UserService} from './user.service';
+
+    @Component({
+        selector: 'app-user',
+        template: '<h1>Users List</h1>'
+    })
+    export class UserComponent {
+        constructor(private userService: UserService) {
+            const users = this.userService.getUsers();
+            // Do something with the users
+        }
+    }
+    ```
+
+In this example, the `UserService` is injected into the `UserComponent` through constructor injection. Angular manages the instantiation of the `UserService` and provides it to the component.
+
+---
+
+**Spring Controller DI Example:**
