@@ -315,4 +315,46 @@ public class UserController {
 - Applications can be both a publisher and subscriber.
     <img src="pubsub.png" alt="Example Image" width="200" height="300">
 
+## Observable Design Pattern
+
+- A sub-design pattern of the pub/sub pattern
+- Utilizes a Subject that maintains observers. Observers subscribe to the subject.
+- Angular's HttpClientModule uses this with RxJS observables for sending HTTP requests and receiving
+responses.
+
+## RxJS (Reactive extension for JavaScript):
+
+- Framework for reactive programming using Observables for writing asynchronous code.
+- RxJS Subjects allow multicasting values to multiple observers.
+
+## Angular Observable Objects:
+
+- Used for event handling, asynchronous programming, and handling multiple values.
+- Observables vs Promises: Observables can unsubscribe and receive multiple values.
+- Subscribe to an Observable with callback functions: `next()`, `error()`, and `complete()`
+
+## HttpClient: 
+
+- The `HttpClient` class, found within the `HttpClientModule`, streamlines HTTP requests and responses in Angular, utilizing RxJS Observables. Key attributes include: 
+    - Supports typed request and response objects with TypeScript.
+    - Asynchronous with Observables.
+    - Built-in error handling and testing features.
+
+## AngularJS vs Angular vs Angular 4+:
+
+- AngularJS was the first version of Angular developed by Google, using JavaScript.
+- Angular introduced TypeScript and was often referred to as Angular 2, causing confusion.
+- Angular 4+ followed the messy versioning and development timeline.
+- AngularJS information is not applicable to modern Angular development.
+
+## MVC in Angular:
+
+- Models: Data classes, often in a "models" folder.
+- Views: Components, including the HTML template.
+- Controllers: Services, containing logic.
+
+## **Vulnerable and Outdated Components - Mitigating Risks**
+
+[OWASP Documentation](https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/)
+
     
