@@ -21,6 +21,7 @@ public class StudentDAO implements InitializingBean, DisposableBean {
         System.out.println("Setting Driver");
         StudentDAO.driver = driver;
     }
+
     static Connection con;
     static String url;
     static String userName;
@@ -31,5 +32,55 @@ public class StudentDAO implements InitializingBean, DisposableBean {
     }
     public static void setConn(Connection con) {
         StudentDAO.con = con;
+    }
+    public static String getUrl() {
+        return url;
+    }
+    public static void setUrl(String url) {
+        System.out.println("Setting URL");
+        StudentDAO.url = url;
+    }
+    public static String getUserName() {
+        return userName;
+    }
+    public static void setUserName(String userName) {
+        System.out.println("Setting User Name");
+        StudentDAO.userName = userName;
+    }
+    public static String getPassword() {
+        return password;
+    }
+    public static void setPassword(String password) {
+        System.out.println("Setting Password");
+        StudentDAO.password = password;
+    }
+
+    void init() throws ClassNotFoundException, SQLException {
+        System.out.println("Initializing init method");
+        createConnection();
+    }
+    static void createConnection() throws ClassNotFoundException, SQLException {
+        Class.forName(driver);
+        con = DriverManager.getConnection(url, userName, password);
+    }
+    static void closeConnection() throws SQLException {
+        con.close();
+    }
+
+    void getAllRecords() throws SQLException {
+        String sql = "SELECT * FROM student";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()) {
+            System.out.println("ID: " + rs.getInt(1) + " Name: " + rs.getString(2) + " Age: " + rs.getInt(3), + " Course: " + rs.getString(4));
+        }
+    }
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Inside init method");
+        createConnection();
+    }
+    public void destroy() throws Exception {
+        System.out.println("Inside destroy method");
+        closeConnection();
     }
 }
